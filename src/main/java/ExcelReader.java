@@ -1,10 +1,9 @@
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.xssf.usermodel.*;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.Calendar;
 
 public class ExcelReader {
     public String path;
@@ -370,9 +369,9 @@ public class ExcelReader {
             cell.setCellValue(colName);
             cell.setCellStyle(style);
 
-            fileOut = new FileOutputStream(path);
-            workbook.write(fileOut);
-            fileOut.close();
+            fileOutputStream = new FileOutputStream(path);
+            workbook.write(fileOutputStream);
+            fileOutputStream.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -405,9 +404,9 @@ public class ExcelReader {
                     }
                 }
             }
-            fileOut = new FileOutputStream(path);
-            workbook.write(fileOut);
-            fileOut.close();
+            fileOutputStream = new FileOutputStream(path);
+            workbook.write(fileOutputStream);
+            fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
