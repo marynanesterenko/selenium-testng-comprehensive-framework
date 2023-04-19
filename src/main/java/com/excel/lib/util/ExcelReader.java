@@ -1,3 +1,5 @@
+package com.excel.lib.util;
+
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.xssf.usermodel.*;
 
@@ -42,15 +44,6 @@ public class ExcelReader {
 
     }
 
-    /**
-     * Code has been updated as per new POI version - 4.x.x
-     *
-     * @author NaveenKhunteta
-     * @param sheetName
-     * @param colNum
-     * @param rowNum
-     * @return
-     */
     // returns the data from a cell
     public String getCellData(String sheetName, String colName, int rowNum) {
         try {
@@ -119,15 +112,6 @@ public class ExcelReader {
         }
     }
 
-    /**
-     * Code has been updated as per new POI version - 4.x.x
-     *
-     * @author NaveenKhunteta
-     * @param sheetName
-     * @param colNum
-     * @param rowNum
-     * @return
-     */
     // returns the data from a cell
     public String getCellData(String sheetName, int colNum, int rowNum) {
         try {
@@ -185,7 +169,7 @@ public class ExcelReader {
     // returns true if data is set successfully else false
     public boolean setCellData(String sheetName, String colName, int rowNum, String data) {
         try {
-            fis = new FileInputStream(path);
+            fileInputStream = new FileInputStream(path);
             workbook = new XSSFWorkbook(fileInputStream);
 
             if (rowNum <= 0)
